@@ -65,6 +65,7 @@
                 <span class="x-red">*</span>标题:
             </label>
             <div class="layui-input-inline">
+                <input type="hidden" name="id" value="${zqdata.id}">
                 <input type="text" id="L_email" name="title" value="${zqdata.title}" lay-verify="required" autocomplete="off" class="layui-input">
             </div>
         </div>
@@ -83,13 +84,23 @@
         <div class="layui-form-item">
             <div class="layui-form-item">
                 <label for="L_pass" class="layui-form-label">
+                    <span class="x-red">*</span>摘要:
+                </label>
+                <div class="layui-input-inline" style="width: 600px">
+                    <textarea name="description">${zqdata.description}</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label for="L_pass" class="layui-form-label">
                     <span class="x-red">*</span>内容:
                 </label>
                 <div class="layui-input-inline" style="width: 600px">
                     <textarea id="content" name="content">${zqdata.content}</textarea>
                 </div>
             </div>
-
+        </div>
             <input name="liveValue" value="50" hidden="hidden" >
             <input name="learnValue" value="50" hidden="hidden" >
             <div class="layui-form-item">

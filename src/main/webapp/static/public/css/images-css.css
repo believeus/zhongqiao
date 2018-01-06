@@ -1,0 +1,139 @@
+/*
+.mod18{width:840px;height:652px;margin:20px auto;position:relative;background:#f7f7f7;}
+.mod18 .btn{position:absolute;width:15px;height:70px;top:540px;cursor:pointer;z-index:99;font-size:50px;font-weight:bold;}
+.mod18 .prev{left:0;background:url(plug_prevBtn.png) no-repeat;}
+.mod18 #prevTop,.mod18 #nextTop{top:313px;width:46px;height:48px;}
+.mod18 #prevTop{background:url(plug_prevBtnTop.png) 0 0 no-repeat;}
+.mod18 #nextTop{background:url(plug_nextBtnTop.png) 0 0 no-repeat;}
+.mod18 .next{right:0;background:url(plug_nextBtn.png) no-repeat;}
+.mod18 li{float:left;}
+.mod18 .cf li{position:relative;color:#fff;}
+.mod18 .cf a{display:block;width:840px;height:630px;position:absolute;color:#fff;}
+.mod18 .cf li span{display:block;width:640px;position:absolute;left:0;bottom:0;padding:10px 20px;line-height:22px;text-align:left;background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = "#60000000",endColorstr = "#60000000");}
+.mod18 .picBox{height:530px;position:relative;overflow:hidden;}
+.mod18 .picBox ul{height:630px;position:absolute;}
+.mod18 .picBox li{width:840px;height:652px;}
+
+.mod18 .listBox{width:842;height:100px;margin:0 auto;position:relative;padding:6px 0 10px;overflow:hidden;}
+.mod18 .listBox ul{height:100px;position:absolute;}
+.mod18 .listBox li{width:141px;height:80px;cursor:pointer;position:relative;}
+.mod18 .listBox li i{display:none;}
+.mod18 .listBox li a{display:block;width:136px;height:80px;}
+.mod18 .listBox li img{width:136px;height:80px;}
+.mod18 .listBox .on img{width:130px;height:74px;border:3px solid #ff6600;}
+.mod18 .listBox .on i{display:block;}
+*/
+.mod18 {
+    background: none repeat scroll 0 0 #F7F7F7;
+    height: 572px;
+    margin: 20px auto;
+    position: relative;
+    width: 720px;
+}
+.mod18 .btn {
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: bold;
+    height: 70px;
+    position: absolute;
+    top: 490px;
+    width: 15px;
+    z-index: 99;
+}
+.mod18 .prev {
+    background: url("plug_prevBtn.png") no-repeat;
+    left: 0;
+}
+.mod18 #prevTop, .mod18 #nextTop {
+    height: 48px;
+    top: 263px;
+    width: 46px;
+}
+.mod18 #prevTop {
+    background: url("plug_prevBtnTop.png") no-repeat ;
+}
+.mod18 #nextTop {
+    background: url("plug_nextBtnTop.png") no-repeat;
+}
+.mod18 .next {
+    background: url("plug_nextBtn.png") no-repeat;
+    right: 0;
+}
+.mod18 li {
+    float: left;
+}
+.mod18 .cf li {
+    color: #FFFFFF;
+    position: relative;
+}
+.mod18 .cf a {
+    color: #FFFFFF;
+    display: block;
+    height: 630px;
+    position: absolute;
+    width: 840px;
+}
+.mod18 .cf li span {
+    background:rgba(0,0,0,0.6);
+	filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = "#60000000",endColorstr = "#60000000");
+    bottom: 0;
+    display: block;
+    left: 0;
+    line-height: 22px;
+    padding: 10px 20px;
+    position: absolute;
+    text-align: left;
+    width: 720px;
+}
+.mod18 .picBox {
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+}
+.mod18 .picBox ul {
+    height: 630px;
+    position: absolute;
+}
+.mod18 .picBox li {
+    height: 480px;
+    width: 720px;
+}
+.mod18 .listBox {
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 6px 0 10px;
+    position: relative;
+}
+.mod18 .listBox ul {
+    height: 100px;
+    position: absolute;
+}
+.mod18 .listBox li {
+    cursor: pointer;
+    height: 80px;
+    position: relative;
+    width: 141px;
+}
+.mod18 .listBox li i {
+    display: none;
+}
+.mod18 .listBox li a {
+    display: block;
+    height: 80px;
+    width: 136px;
+}
+.mod18 .listBox li img {
+    height: 80px;
+    width: 136px;
+}
+.mod18 .listBox .on img {
+    border: 3px solid #FF6600;
+    height: 74px;
+    width: 130px;
+}
+.mod18 .listBox .on i {
+    display: block;
+}
+.mod18 .cf img{ width:720px; height:480px;}
+.mod18 .cf span{ color:#fff;}

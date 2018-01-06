@@ -1,35 +1,36 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<div id="footer" style="background:none;"></div>
-<div id="banquan_nav">
-	<div id="bottomNav" class="box">
-		<div class="box_1">
-			<a href="#" target="_blank">联系我们</a> | <a href="#" target="_blank">免责说明</a>
-			<div class="f_r" id="returnTop"
-				style="display: block; background-position: 0px -81px; ">
-				<a href="#top"></a>
-			</div>
-			<script language="javascript" type="text/javascript">
-				$(window).scroll(
-						function() {
-							var tt = document.documentElement.scrollTop
-									|| document.body.scrollTop;
-							;
-							if (tt > 500) {
-								$('#returnTop').show();
-							} else {
-								$('#returnTop').hide();
-							}
-						});
-				$('#returnTop').click(function() {
-					$("html, body").animate({
-						'scrollTop' : 0
-					}, 320);
-				})
-			</script>
-		</div>
+<div class="footer" style="position: relative;">
+	<div style="position: absolute; left:140px; top:12px">
+		<script type="text/javascript" charset="utf-8"></script>
 	</div>
-	<p class="fooCorpy">
-		凡本网站转载的文章、图片等资料的版权归版权所有人所有，因无法和版权所有者一一联系，如果本网站选取的文/图威胁到您的权益，请您及时和本网站联系。<br />我们会在第一时间内采取措施，避免给双方造
-		成不必要的损失。 <br /> <br /> ICP备案证书号:<a href="#" target="_blank">京ICP备xxxxxxx号</a><br />
-		&copy; 2005-2015 IT营 版权所有，并保留所有权利。 <br>
+	<ul>
+		<li>
+			<a href="http://www.crv.com.cn/qtlm/wzdt/" title="网站地图">网站地图</a>
+		</li>
+		<li>|</li>
+		<li>
+			<a href="http://www.crv.com.cn/qtlm/ysyaq/" title="隐私安全">隐私安全</a>
+		</li>
+		<li>|</li>
+		<li>
+			<a href="http://www.crv.com.cn/qtlm/bqsy/" title="版权所有">版权所有</a>
+		</li>
+		<li>|</li>
+		<li>
+			<a href="http://bbs.crvanguard.com.cn/" title="员工论坛" target="_blank">员工论坛</a>
+		</li>
+		<li>|</li>
+		<li>
+			<a href="http://mail.crvanguard.com.cn/" title="员工邮箱" target="_blank">员工邮箱</a>
+		</li>
+		<li>|</li>
+		<li>
+			<a href="http://www.crv.com.cn/gywm/llwm/" title="联络我们">联络我们</a>
+		</li>
+	</ul>
+	<p>
+		Copyright © 广州中桥能源科技有限公司 &nbsp;&nbsp;
+		<a target="_blank" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action">粤ICP备05036369号</a>
+		&nbsp;&nbsp; 技术支持：中桥能源管理部
+	</p>
 </div>

@@ -18,9 +18,10 @@ public class Zqdata extends TbaseEntity implements java.io.Serializable {
 	private static final long serialVersionUID = -3416419788711416943L;
 
 
-	@ManyToOne
-	@JoinColumn(name="fk_metaId")
+
 	private Zqmeta zqmeta;
+
+	private String description;
 
 	private String title;
 	private String content;
@@ -43,6 +44,8 @@ public class Zqdata extends TbaseEntity implements java.io.Serializable {
 		this.id = id;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="fk_metaId",referencedColumnName = "id")
 	public Zqmeta getZqmeta() {
 		return this.zqmeta;
 	}
@@ -67,5 +70,11 @@ public class Zqdata extends TbaseEntity implements java.io.Serializable {
 		this.content = content;
 	}
 
+	public String getDescription() {
+		return description;
+	}
 
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

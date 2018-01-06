@@ -81,6 +81,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <ul id="treeDemo" class="ztree"></ul>
             </div>
             <div class="layui-form-item">
+                <div class="layui-form-item">
+                    <label for="L_pass" class="layui-form-label">
+                        <span class="x-red">*</span>摘要:
+                    </label>
+                    <div class="layui-input-inline" style="width: 600px">
+                        <textarea name="description"></textarea>
+                    </div>
+                </div>
+            </div>
           <div class="layui-form-item">
               <label for="L_pass" class="layui-form-label">
                   <span class="x-red">*</span>内容:

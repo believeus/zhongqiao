@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	width:100%;
+	text-align:center;
+}
+img {
+	border:none;
+}
+a {
+	text-decoration:none;
+	cursor:pointer;
+}
+strong {
+	font-weight:bold;
+}
+ul, ol, li, dt, dd {
+	list-style:none;
+}
+em, i {
+	font-style:normal;
+}
+
+.f_l {
+	float:left;
+}
+.f_r {
+	float:right;
+}
+
+.w980 {
+	width:980px;
+	margin:0 auto;
+	text-align:left;
+}
+
+
+/*底部图标*/

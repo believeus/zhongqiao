@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <tr>
           	<th>ID</th>
             <th>标题</th>
-            <th>内容</th>
+            <th>摘要</th>
             <th>创建时间:</th>
             <th>操作</th>
            </tr>
@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         		<tr>
         			<td><span>${data.id}</span></td>
 	        		<td><span>${data.title}</span></td>
-	        		<td><span>${data.content}</span></td>
+	        		<td><span>${data.description}</span></td>
 	        		<td><date:date value="${data.createTime}" pattern="yyyy-MM-dd"/></td>
                     <td><a href="javascript:void(0)" onclick="x_admin_show('修改信息','admin/data/editView.jhtml?id=${data.id}',800,550)">编辑</a>|<a href="javascript:void(0)" onclick="del(this,'${data.id}')">删除</a></td>
         		</tr>

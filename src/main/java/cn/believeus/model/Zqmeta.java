@@ -2,6 +2,7 @@ package cn.believeus.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -10,9 +11,8 @@ import java.util.Set;
 
 @Table(name="zqmeta")
 @Entity
-public class Zqmeta implements java.io.Serializable {
+public class Zqmeta {
 
-	private static final long serialVersionUID = -8434750202099624550L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -20,6 +20,12 @@ public class Zqmeta implements java.io.Serializable {
 	private Integer parentId;
 	private String imageUrl;
 	//private Set zqdatas = new HashSet(0);
+
+	@OneToMany(mappedBy = "zqmeta")
+	private List<Zqdata> zqdatas;
+
+	@Transient
+	private List<Zqmeta> children;
 
 	// Constructors
 
@@ -81,4 +87,20 @@ public class Zqmeta implements java.io.Serializable {
 //		this.zqdatas = zqdatas;
 //	}
 
+
+	public List<Zqdata> getZqdatas() {
+		return zqdatas;
+	}
+
+	public void setZqdatas(List<Zqdata> zqdatas) {
+		this.zqdatas = zqdatas;
+	}
+
+	public List<Zqmeta> getChildren() {
+		return children;
+	}
+
+	public void setChildren(List<Zqmeta> children) {
+		this.children = children;
+	}
 }
