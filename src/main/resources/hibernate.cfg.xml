@@ -32,6 +32,8 @@
 		<mapping class="cn.believeus.model.Ttask"/>
 		<mapping class="cn.believeus.model.TCategory"/>
 		<mapping class="cn.believeus.model.TCourse"/>
+		<mapping class="cn.believeus.model.Zqdata" />
+		<mapping class="cn.believeus.model.Zqmeta" />
 	</session-factory>
 
 </hibernate-configuration>

@@ -125,5 +125,10 @@
 		<url-pattern>/group/M00/*</url-pattern>
 	</servlet-mapping>
 	<!-- End Author:wuqiwei:Data:2014-06-05 AddReason:内嵌式小型分布式文件系统集成 -->
-	
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/tag/datetag.tld</taglib-uri>
+			<taglib-location>/tag/datetag.tld</taglib-location>
+		</taglib>
+	</jsp-config>
 </web-app>
