@@ -1,7 +1,6 @@
 #!/bin/sh
 tomcat_home=/usr/local/tomcat
 kill -9 $(lsof -i tcp:8080 | sed -n '2p' | awk '{print $2}')
-sleep 3
 git pull
 mvn clean compile war:war
 mv target/*.war target/ROOT.war

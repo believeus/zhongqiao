@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- End Name:wuqiwei 此处必须加：不加验证之后就不能表单提交了,所以如果已经验证直接跳转到/admin/login.jhtml页面 -->
     <div class="login">
         <div class="message" style="font-size: 22px;padding: 18px 10px 19px 18px;">
-        	大悟智课分布式师徒积分制管理系统
+        	广州中桥能源后台管理系统
         </div>
         <div id="darkbannerwrap"></div>
         
