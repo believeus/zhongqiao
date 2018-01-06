@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <label for="L_pass" class="layui-form-label">
                   <span class="x-red">*</span>内容:
               </label>
-              <div class="layui-input-inline" style="width: 400px">
+              <div class="layui-input-inline" style="width: 600px">
                   <textarea id="content" name="content"></textarea>
               </div>
           </div>
