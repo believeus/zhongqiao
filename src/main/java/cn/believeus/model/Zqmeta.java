@@ -27,6 +27,10 @@ public class Zqmeta implements java.io.Serializable {
 	public Zqmeta() {
 	}
 
+	public Zqmeta(Integer id) {
+		this.id = id;
+	}
+
 	/** full constructor */
 	public Zqmeta(String name, Integer parentId, String imageUrl) {
 		this.name = name;

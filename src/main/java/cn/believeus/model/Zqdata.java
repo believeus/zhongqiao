@@ -2,6 +2,7 @@ package cn.believeus.model;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -17,6 +18,7 @@ public class Zqdata extends TbaseEntity implements java.io.Serializable {
 	private static final long serialVersionUID = -3416419788711416943L;
 
 
+	@ManyToOne
 	@JoinColumn(name="fk_metaId")
 	private Zqmeta zqmeta;
 

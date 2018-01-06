@@ -53,51 +53,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="x-body">
       <xblock>
       	  <c:if test="${sessionScope.sessionUser.username eq 'admin'}">
-        	<button class="layui-btn" onclick="x_admin_show('添加程序员','admin/studn/addView.jhtml',400,550)"><i class="layui-icon"></i>添加</button>
+        	<button class="layui-btn" onclick="x_admin_show('添加信息','admin/data/addView.jhtml',800,550)"><i class="layui-icon"></i>添加</button>
          </c:if>
       </xblock>
       <table class="layui-table">
         <thead>
           <tr>
-          	<th>用户编号</th>
-            <th>用户名</th>
-            <th>性别</th>
-            <th>用户角色</th>
-            <th>报名时间:</th>
-            <th>状态</th>
-            <th>生活分</th>
-            <th>学习分</th>
+          	<th>ID</th>
+            <th>标题</th>
+            <th>内容</th>
+            <th>创建时间:</th>
             <th>操作</th>
            </tr>
         </thead>
         <tbody>
-        <c:forEach var="user" items="${userlist.content}">
+        <c:forEach var="data" items="${list.content}">
         		<tr>
-        			<td><span>${user.id}</span></td>
-	        		<td><span>${user.truename}</span></td>
-	        		<td><span>${user.sex}</span></td>
-	        		<td>
-	        			<c:choose>
-	        				<c:when test="${user.role.roleName eq 'stud'}">
-	        					<span>学员小菜鸟</span>
-	        				</c:when>
-	        				<c:otherwise>
-	        					<span>核心程序猿</span>
-	        				</c:otherwise>
-	        			</c:choose>
-	        		</td>
-	        		<td><date:date value="${user.createTime}" pattern="yyyy-MM-dd"/></td>
-	        		<td><span>${user.status}</span></td>
-	        		<td><span>${user.liveValue}</span><a href="javascript:;" onclick="x_admin_show('生活积分详情','admin/studn/doneView.jhtml?userId=${user.id}&type=live',850,500)" >&nbsp;&nbsp;[生活积分详情]</a></td>
-	        		<td><span>${user.learnValue}</span><a href="javascript:;" onclick="x_admin_show('学习积分详情','admin/studn/doneView.jhtml?userId=${user.id}&type=learn',850,500)" >&nbsp;&nbsp;[学习积分详情]</a></td>
-	        		<td class="td-manage">
-	        			 <a title="编辑"  onclick="x_admin_show('编辑','admin/studn/editView.jhtml?id=${user.id}',400,580)" href="javascript:;">[编辑]</a>
-		        		 <c:if test="${sessionScope.sessionUser.username eq 'admin'}">
-				               <a href="javascript:;" onclick="x_admin_show('绑定事件','admin/studn/eventView.jhtml?userId=${user.id}',850,500)" >&nbsp;&nbsp;[绑定事件]</a>
-			               	   <a href="javascript:;" onclick="del(this,${user.id})">[删除]</a>
-			             </c:if>
-		      
-	            	</td>
+        			<td><span>${data.id}</span></td>
+	        		<td><span>${data.title}</span></td>
+	        		<td><span>${data.content}</span></td>
+	        		<td><date:date value="${data.createTime}" pattern="yyyy-MM-dd"/></td>
+                    <td><a href="javascript:void(0)" onclick="x_admin_show('修改信息','admin/data/editView.jhtml?id=${data.id}',800,550)">编辑</a>|<a href="javascript:void(0)" onclick="del(this,'${data.id}')">删除</a></td>
         		</tr>
         	
         </c:forEach>
@@ -110,9 +86,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
       </div>
         <script type="text/javascript">
-            var url = 'admin/studn/list.jhtml?pageNumber=';
-            var totalPage = "${userlist.totalPages}";
-            var pageNumber = "${userlist.pageNumber}";
+            var url = 'admin/data/list.jhtml?pageNumber=';
+            var totalPage = "${list.totalPages}";
+            var pageNumber = "${list.pageNumber}";
             initPage(url,totalPage,pageNumber);
         </script>
 
@@ -137,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       function del(obj,id){
           layer.confirm('确认要删除吗？',function(index){
               //发异步删除数据
-              var url="admin/studn/del.jhtml?id="+id;
+              var url="admin/data/del.jhtml?id="+id;
               $.post(url,function(){
             	  $(obj).parents("tr").remove();
                   layer.msg('已删除!',{icon:1,time:1000});
@@ -146,7 +122,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               
           });
       }
-
 
 
       function delAll(argument) {

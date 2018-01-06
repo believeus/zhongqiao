@@ -51,98 +51,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="left-nav">
       <div id="side-nav">
         <ul id="nav">
-            <li>
-                <a href="javascript:;">
-                    <i class="iconfont">&#xe6b8;</i>
-                    <cite>学员管理</cite>
-                    <i class="iconfont nav_right">&#xe697;</i>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a _href="admin/studn/list.jhtml">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>学员列表</cite>
-                            
-                        </a>
-                    </li >
-                  
-                   <li>
-                        <a _href="admin/studn/list.jhtml">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>学员学习进度管理</cite>
-                            
-                        </a>
-                    </li >
-                </ul>
-            </li>
              <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe6b8;</i>
-                    <cite>课程管理</cite>
+                    <cite>信息类别</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
                         <a _href="admin/meta/category.jhtml">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>课程分类</cite>
+                            <cite>信息分类</cite>
                             
                         </a>
                     </li >
                      <li>
-                        <a _href="admin/studn/list.jhtml">
+                        <a _href="admin/data/list.jhtml">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>课程试题</cite>
+                            <cite>企业信息</cite>
                             
                         </a>
                     </li >
-                   <li>
-                        <a _href="admin/meta/list.jhtml">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>课程内容</cite>
-                            
-                        </a>
-                    </li >
-                </ul>
-            </li>
-            <c:if test="${sessionScope.sessionUser.username eq 'admin'}">
-            <li>
-                <a href="javascript:;">
-                    <i class="iconfont">&#xe723;</i>
-                    <cite>积分管理</cite>
-                    <i class="iconfont nav_right">&#xe697;</i>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a _href="admin/event/list.jhtml">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>管理条例</cite>
-                        </a>
-                    </li >
-                </ul>
-            </li>
-            </c:if>
-             <li>
-                <a href="javascript:;">
-                    <i class="iconfont">&#xe723;</i>
-                    <cite>总服务台</cite>
-                    <i class="iconfont nav_right">&#xe697;</i>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a _href="admin/task/list.jhtml">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>积分悬赏</cite>
-                        </a>
-                    </li>
-                    <c:if test="${sessionScope.sessionUser.username eq 'admin'}">
-                     <li>
-                        <a _href="admin/review/list.jhtml">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>仲裁大厅</cite>
-                        </a>
-                     </li>
-                    </c:if>
                 </ul>
             </li>
         </ul>
@@ -168,7 +97,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- 中部结束 -->
     <!-- 底部开始 -->
     <div class="footer">
-        <div class="copyright">Copyright ©2017 广州大悟智课网络科技有限责任公司 v2.3 All Rights Reserved</div>  
+        <div class="copyright">Copyright ©2017 广州中桥能源科技有限责任公司 v2.3 All Rights Reserved</div>
     </div>
     <!-- 底部结束 -->
    
