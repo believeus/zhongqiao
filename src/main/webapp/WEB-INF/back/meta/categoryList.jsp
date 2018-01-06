@@ -13,7 +13,7 @@
 <head>
 <base href="<%=basePath%>">
 <meta charset="UTF-8">
-<title>分布式师徒积分制管理系统</title>
+<title>广州中桥能源后台管理系统</title>
 <meta name="renderer" content="webkit">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="static/public/css/font.css">

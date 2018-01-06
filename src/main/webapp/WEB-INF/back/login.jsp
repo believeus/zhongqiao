@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 	<base href="<%=basePath%>">
 	<meta charset="UTF-8">
-	<title>分布式师徒积分制管理系统</title>
+	<title>广州中桥能源后台管理系统</title>
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- End Name:wuqiwei 此处必须加：不加验证之后就不能表单提交了,所以如果已经验证直接跳转到/admin/login.jhtml页面 -->
     <div class="login">
         <div class="message" style="font-size: 22px;padding: 18px 10px 19px 18px;">
-        	大悟智课分布式师徒积分制管理系统
+        	广州中桥能源后台管理系统
         </div>
         <div id="darkbannerwrap"></div>
         
@@ -68,17 +68,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
     </script>
 
-    
-    <!-- 底部结束 -->
-    <script>
-    //百度统计可去掉
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
 </body>
 </html>

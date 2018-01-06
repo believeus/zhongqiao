@@ -2,7 +2,6 @@
 #杀死tomcat
 tomcat_home=/usr/local/tomcat
 kill -9 $(echo $(netstat -anp|grep 8080) | cut -d " " -f 7|cut -d / -f 1)
-sleep 3
 git pull
 mvn clean compile war:war
 mv target/*.war target/ROOT.war
