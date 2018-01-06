@@ -99,64 +99,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				hideMenu();
 			}
 		}
-        $(document).ready(function(){
-        	$.ajax({
-                url: 'admin/course/loadTree.jhtml',
-                type: 'get',
-                dataType: 'json',
-                success: function (data) {
-                    $.fn.zTree.init($("#treeDemo"), setting, data);
-                }
-            });
-        });  
     </SCRIPT>
   </head>
   
   <body>
     <div class="x-body">
-        <form class="layui-form">
-          <div class="layui-form-item">
-              <label for="L_email" class="layui-form-label">
-               <span class="x-red">*</span>课程分类: 	
-              </label>
-              <div class="layui-input-inline" >
-               <input id="category_id" name="category_id" type="hidden">
-               <input id="categorySel" readonly="" lay-verify="required" placeholder="点击选择" class="layui-input" onclick="showMenu(); return false;">
-              </div>
-          </div>
-          <div class="x-body menuContent" id="menuContent" >
-				<ul id="treeDemo" class="ztree"></ul>
-		  </div>
+        <form class="layui-form" id="addForm" action="/admin/course/add_category.jhtml" method="post">
           <div class="layui-form-item">
               <label for="L_pass" class="layui-form-label">
-                  <span class="x-red">*</span>课程名称:
+                  <span class="x-red">*</span>分类名称:
               </label>
               <div class="layui-input-inline">
                   <input  name="name"  lay-verify="required"  autocomplete="off" class="layui-input">
+                  <input name="parentId" type="hidden" value="${parent}">
               </div>
           </div>
            <div class="layui-form-item">
               <label for="L_username" class="layui-form-label">
-                  <span class="x-red">*</span>视频总时长:
+                  <span class="x-red">*</span>图片:
               </label>
               <div class="layui-input-inline">
-                   <input name="vidHour"  lay-verify="required"  autocomplete="off" class="layui-input">
-              </div>
-          </div>
-          <div class="layui-form-item">
-              <label for="L_username" class="layui-form-label">
-                  <span class="x-red">*</span>时间规划:
-              </label>
-              <div class="layui-input-inline">
-                  <input name="studyTime"  lay-verify="required"  autocomplete="off" class="layui-input">
-              </div>
-          </div>
-           <div class="layui-form-item">
-              <label for="L_username" class="layui-form-label">
-                  <span class="x-red"></span>课程简介:
-              </label>
-              <div class="layui-input-inline">
-                  	<textarea rows="10" cols="38" maxlength="255" name="introduce"  lay-verify="required" class="tarea"></textarea>
+                   <input name="image" type="file"  autocomplete="off" class="layui-input">
               </div>
           </div>
           <div class="layui-form-item">
@@ -174,8 +137,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	          form.render();
     	          //监听提交
     	          form.on('submit(add)', function(data){
-    	            //发异步，把数据提交给php
-    	            $.post("admin/course/edit_course.jhtml",data.field,function(data,status){
+                      var form = new FormData(document.getElementById("addForm"));
+                        $.ajax({
+                            url:"/admin/meta/add_category.jhtml",
+                            type:"post",
+                            data:form,
+                            processData:false,
+                            contentType:false,
+                            success:function (data) {
+                                if(data=="ok"){
+                                    layer.alert("增加成功", {icon: 6},function () {
+                                        // 获得frame索引
+                                        var index = parent.layer.getFrameIndex(window.name);
+                                        //关闭当前frame
+                                        parent.layer.close(index);
+                                        parent.location.reload();
+                                    });
+                                }else{
+                                    layer.msg("添加失败，请重新刷新页面！");
+                                }
+                            }
+                        })
+                      /*$("#addForm").ajaxSubmit({
+                          url:"/admin/course/add_course.jhtml",
+                          type:"post",
+                          success:function (data) {
+                              if(data=="ok"){
+                                  layer.alert("增加成功", {icon: 6},function () {
+                                      // 获得frame索引
+                                      var index = parent.layer.getFrameIndex(window.name);
+                                      //关闭当前frame
+                                      parent.layer.close(index);
+                                      parent.location.reload();
+                                  });
+                              }else{
+                                  layer.msg("添加失败，请重新刷新页面！");
+                              }
+                          }
+                      });*/
+    	           /* $.post("admin/course/edit_course.jhtml",data.field,function(data,status){
     	            	if(data=="ok"){
     	            		layer.alert("增加成功", {icon: 6},function () {
         	                    // 获得frame索引
@@ -188,7 +188,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			    		layer.msg("添加失败，请重新刷新页面！");
     			    	}
     	            	
-    	            });
+    	            });*/
     	            
     	            return false;
     	          });

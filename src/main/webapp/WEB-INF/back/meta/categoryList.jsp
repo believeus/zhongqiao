@@ -69,8 +69,8 @@
                 }
             },
             edit: {
-                enable: true,
-                editNameSelectAll: true
+                enable: false,
+                editNameSelectAll: false
             },
             callback: {  
                 onRemove: onRemove, //移除事件  
@@ -80,7 +80,7 @@
 
         $(document).ready(function(){
         	$.ajax({
-                url: 'admin/course/loadTree.jhtml',
+                url: 'admin/meta/loadTree.jhtml',
                 type: 'get',
                 dataType: 'json',
                 success: function (data) {
@@ -95,33 +95,66 @@
             if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
             var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
                 + "' title='添加分类' onfocus='this.blur();'></span>";
+            var editStr = "<span class='button edit' id='editBtn_" + treeNode.tId
+                + "' title='修改分类' onfocus='this.blur();'></span>";
+            var delStr = "<span class='button remove' id='delBtn_" + treeNode.tId
+                + "' title='删除分类' onfocus='this.blur();'></span>";
+            sObj.after(delStr);
+            sObj.after(editStr);
             sObj.after(addStr);
+
+
             var btn = $("#addBtn_"+treeNode.tId);
             if (btn) btn.bind("click", function(){
                 var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-                var name='请修改节点名称';
-            	$.post("admin/course/add_category.jhtml",
+                x_admin_show('添加分类','admin/meta/add_category.jhtml?parent='+treeNode.id,850,500);
+                /*var name='请修改节点名称';
+            	$.post("admin/meta/add_category.jhtml",
             		    {
             		      parent:treeNode.id,
             		      name:name
             		    },
             		    function(data,status){
             		    	if(status=="success"){
-            		    		 var newID = data; //获取新添加的节点Id  
-            		             zTree.addNodes(treeNode, {id:newID, pId:treeNode.id, name:name}); //页面上添加节点  
-            		             var node = zTree.getNodeByParam("id", newID, null); //根据新的id找到新添加的节点  
-            		             zTree.selectNode(node); //让新添加的节点处于选中状态  
+            		    		 var newID = data; //获取新添加的节点Id
+            		             zTree.addNodes(treeNode, {id:newID, pId:treeNode.id, name:name}); //页面上添加节点
+            		             var node = zTree.getNodeByParam("id", newID, null); //根据新的id找到新添加的节点
+            		             zTree.selectNode(node); //让新添加的节点处于选中状态
             		             layer.msg("添加成功！");
             		    	}
-            		    });
+            		    });*/
+                return false;
+            });
+
+            var edit = $("#editBtn_"+treeNode.tId);
+            if (edit) edit.bind("click", function(){
+                var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+                x_admin_show('修改分类','admin/meta/edit_category.jhtml?id='+treeNode.id,850,500);
+                return false;
+            });
+
+            var del = $("#delBtn_"+treeNode.tId);
+            if (del) del.bind("click", function(){
+                $.post("admin/meta/del_category.jhtml",{id:treeNode.id, },
+                    function(data,status){
+                        if(data=="ok"){
+                            layer.msg("删除成功！");
+                            location.reload();
+                        }else{
+                            layer.msg("删除失败，请重新刷新页面！");
+                        }
+                    });
                 return false;
             });
         };
         function removeHoverDom(treeId, treeNode) {
             $("#addBtn_"+treeNode.tId).unbind().remove();
+            $("#editBtn_"+treeNode.tId).unbind().remove();
+            $("#delBtn_"+treeNode.tId).unbind().remove();
         };
         function onRename(e, treeId, treeNode, isCancel) {
-        	$.post("admin/course/up_category.jhtml",
+            x_admin_show('修改分类','admin/meta/edit_category.jhtml?id='+treeNode.id,850,500);
+        	/*$.post("admin/meta/up_category.jhtml",
         		    {
         		      id:treeNode.id,
         		      name:treeNode.name
@@ -132,10 +165,10 @@
         		    	}else{
         		    		layer.msg("更新失败，请重新刷新页面！");
         		    	}
-        		    });
+        		    });*/
         }
-        function onRemove(e, treeId, treeNode) {  
-        	$.post("admin/course/del_category.jhtml",{id:treeNode.id, },
+        function onRemove(e, treeId, treeNode) {
+        	$.post("admin/meta/del_category.jhtml",{id:treeNode.id, },
         		    function(data,status){
         		if(data=="ok"){
 		    		layer.msg("删除成功！");

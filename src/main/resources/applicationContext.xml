@@ -16,4 +16,5 @@
 	<import resource="applicationContext-hibernateTemplate.xml"/>
 	<import resource="applicationContext-shiro.xml"/>
 	<import resource="applicationContext-cached.xml"/>
+	<import resource="applicationContext-mydfs.xml"/>
 </beans>

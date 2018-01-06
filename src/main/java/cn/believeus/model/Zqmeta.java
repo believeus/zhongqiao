@@ -1,9 +1,6 @@
 package cn.believeus.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +14,7 @@ public class Zqmeta implements java.io.Serializable {
 
 	private static final long serialVersionUID = -8434750202099624550L;
 	@Id
-	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String name;
 	private Integer parentId;
