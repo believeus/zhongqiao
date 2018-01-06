@@ -8,7 +8,7 @@
 		
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 	    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-	    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/micro?useUnicode=true&amp;characterEncoding=UTF-8</property>
+	    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/zqdata?useUnicode=true&amp;characterEncoding=UTF-8</property>
 	    <property name="hibernate.connection.username">root</property>
 	    <property name="hibernate.connection.password">root</property>
 		<property name="hbm2ddl.auto">update</property>
@@ -26,12 +26,8 @@
 		
 		<mapping class="cn.believeus.model.Trole"/>
 		<mapping class="cn.believeus.model.Tauthority"/>
-		<mapping class="cn.believeus.model.Tevent"/>
 		<mapping class="cn.believeus.model.Tuser"/>
-		<mapping class="cn.believeus.model.TuserEvent"/>
-		<mapping class="cn.believeus.model.Ttask"/>
-		<mapping class="cn.believeus.model.TCategory"/>
-		<mapping class="cn.believeus.model.TCourse"/>
+
 		<mapping class="cn.believeus.model.Zqdata" />
 		<mapping class="cn.believeus.model.Zqmeta" />
 	</session-factory>

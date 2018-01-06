@@ -1,15 +1,13 @@
 package cn.believeus.model;
 
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
 
-/**
- * Zqdata entity. @author MyEclipse Persistence Tools
- */
 
 @Table(name="zqdata")
 @Entity
-public class Zqdata implements java.io.Serializable {
+public class Zqdata extends TbaseEntity implements java.io.Serializable {
 
 	// Fields
 
@@ -18,18 +16,13 @@ public class Zqdata implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = -3416419788711416943L;
 
-	@Id
-	@Column(name = "id")
-	private Integer id;
 
 	@JoinColumn(name="fk_metaId")
 	private Zqmeta zqmeta;
 
 	private String title;
 	private String content;
-	private Date createtime;
-	private Date edittime;
-
+	
 	// Constructors
 
 	/** default constructor */
@@ -37,19 +30,11 @@ public class Zqdata implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Zqdata(Zqmeta zqmeta, String title, String content,
-			Date createtime, Date edittime) {
+	public Zqdata(Zqmeta zqmeta, String title, String content) {
 		this.zqmeta = zqmeta;
 		this.title = title;
 		this.content = content;
-		this.createtime = createtime;
-		this.edittime = edittime;
-	}
-
-	// Property accessors
-
-	public Integer getId() {
-		return this.id;
+		
 	}
 
 	public void setId(Integer id) {
@@ -80,20 +65,5 @@ public class Zqdata implements java.io.Serializable {
 		this.content = content;
 	}
 
-	public Date getCreatetime() {
-		return this.createtime;
-	}
-
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
-	}
-
-	public Date getEdittime() {
-		return this.edittime;
-	}
-
-	public void setEdittime(Date edittime) {
-		this.edittime = edittime;
-	}
 
 }

@@ -1,12 +1,7 @@
 package cn.believeus.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -39,7 +34,6 @@ public class Tuser extends TbaseEntity {
 	/**生活积分*/
 	private Integer  liveValue;
 	
-	private List<Ttask> tasklist = new ArrayList<Ttask>();
 	
 	public String getDescription() {
 		return description;
@@ -71,11 +65,7 @@ public class Tuser extends TbaseEntity {
 		return sex;
 	}
 
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	public List<Ttask> getTasklist() {
-		return tasklist;
-	}
-
+	
 	public String getTruename() {
 		return truename;
 	}
@@ -124,9 +114,6 @@ public class Tuser extends TbaseEntity {
 		this.sex = sex;
 	}
 
-	public void setTasklist(List<Ttask> tasklist) {
-		this.tasklist = tasklist;
-	}
 
 
 	public void setTruename(String truename) {

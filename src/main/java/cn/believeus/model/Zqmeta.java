@@ -15,8 +15,7 @@ import java.util.Set;
 @Entity
 public class Zqmeta implements java.io.Serializable {
 
-	// Fields
-
+	private static final long serialVersionUID = -8434750202099624550L;
 	@Id
 	@Column(name = "id")
 	private Integer id;
