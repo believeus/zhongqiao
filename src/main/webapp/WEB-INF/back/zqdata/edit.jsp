@@ -47,7 +47,7 @@
             position: absolute;
             left: 109px;
             top: 30px;
-            z-index: 1;
+            z-index: 3;
             display: none;
         }
         .tarea{

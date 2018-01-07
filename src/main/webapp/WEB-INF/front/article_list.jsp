@@ -90,16 +90,16 @@
 									  <span class="title_text">${zqdatas.totalPages}</span><span class="title">页&nbsp;&nbsp;</span>
 									  <table border="0" cellspacing="0" cellpadding="0">
 										  <tbody><tr><td><table width="55" border="0" cellpadding="0" cellspacing="0"><tbody>
-										  <tr> <td width="24"><a href="article_list/${type}.jhtml?page=1" class="page">首页</a></td></tr></tbody>
+										  <tr> <td width="24"><a href="article_list/${type}.jhtml?pageNumber=1" class="page">首页</a></td></tr></tbody>
 										  </table></td><td><table width="67" border="0" cellpadding="0" cellspacing="0"><tbody>
-										  <tr> <td width="36"><a href="article_list/${type}.jhtml?page=${zqdatas.pageNumber-1}" class="page">上一页</a></td>
+										  <tr> <td width="36"><a href="article_list/${type}.jhtml?pageNumber=${zqdatas.pageNumber-1}" class="page">上一页</a></td>
 										  </tr></tbody></table>
 									  </td><td><table width="67" border="0" cellpadding="0" cellspacing="0"><tbody>
-										  <tr> <td width="36"><a href="article_list/${type}.jhtml?page=${zqdatas.pageNumber+1}" class="page" target="_self">下一页</a></td></tr></tbody></table></td><td>
-										  <table width="55" border="0" cellpadding="0" cellspacing="0"><tbody><tr>  <td width="24"><a href="article_list/${type}.jhtml?page=${zqdatas.totalPages}" class="page" target="_self">尾页</a></td></tr></tbody></table></td><td style="padding-left:40px;">
+										  <tr> <td width="36"><a href="article_list/${type}.jhtml?pageNumber=${zqdatas.pageNumber+1}" class="page" target="_self">下一页</a></td></tr></tbody></table></td><td>
+										  <table width="55" border="0" cellpadding="0" cellspacing="0"><tbody><tr>  <td width="24"><a href="article_list/${type}.jhtml?pageNumber=${zqdatas.totalPages}" class="page" target="_self">尾页</a></td></tr></tbody></table></td><td style="padding-left:40px;">
 									  <select name="select" style="margin-bottom:-3px;" onchange="location.replace(this.value)"><option selected="">跳至</option>
 										  <c:forEach begin="1" end="${zqdatas.totalPages}" var="v">
-										  <option value="article_list/${type}.jhtml?page=${v}">${v}</option>
+										  <option value="article_list/${type}.jhtml?pageNumber=${v}">${v}</option>
 										  </c:forEach>
 									  </select></td></tr></tbody></table> </span>
 	</div>
