@@ -3,7 +3,9 @@
 	$(".nav_li").not(":first-child,:last-child").hover(
 		function(){
 			$(this).addClass("nav_li_hover");
-			$(this).parent().parent().next(".subnavbg").show();			
+			if($(this).find(".subnav").length > 0){
+				$(this).parent().parent().next(".subnavbg").show();
+            }
 	},
 		function(){
 			$(this).removeClass("nav_li_hover");

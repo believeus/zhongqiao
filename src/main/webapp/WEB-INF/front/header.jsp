@@ -12,19 +12,20 @@
 	<div class="navbody">
 		<div class="nav" style="margin-left:-600px">
 			<ul class="nav_ul">
-				<li class="nav_li"><a class="on" href="index.html"
+				<li class="nav_li"><a class="on" href="index.jhtml"
 									  title="首页">首页</a></li>
 <c:forEach items="${tree}" var="t">
-				<li class="nav_li"><a href="artile/${t.id}.jhtml"
+				<li class="nav_li"><a href="article/${t.id}.jhtml"
 									  class="on">${t.name}</a>
+					<c:if test="${!empty t.children}">
 					<div class="subnav sub-ul03">
 						<ul>
 							<c:forEach items="${t.children}" var="c">
-							<li><a href="artile/${c.id}.jhtml"
+							<li><a href="article/${c.id}.jhtml"
 								   target="_self">${c.name}</a></li>
 							</c:forEach>
 						</ul>
-					</div></li>
+					</div></c:if></li>
 </c:forEach>
 			</ul>
 

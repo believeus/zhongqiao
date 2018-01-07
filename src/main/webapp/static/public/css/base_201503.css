@@ -16,7 +16,7 @@ p{   font:14px/1.8em "微软雅黑"; }
 
 
 /**搜索**/
-.top_sear{background:url(hrsn_search.jpg) no-repeat;width:148px;height:24px;}
+.top_sear{background:url(../../img/hrsn_search.jpg) no-repeat;width:148px;height:24px;}
 .top_sear input{width:120px;border:0 none;outline:none;float:left;padding:5px 0 5px 3px;font:12px/12px "微软雅黑";height:12px;overflow:hidden;margin:1px;}
 .top_sear a{display:block;width:20px;height:24px;float:left;}
 
@@ -34,8 +34,8 @@ p{   font:14px/1.8em "微软雅黑"; }
 .iconbg,.a_more{background-repeat: no-repeat;  display:block;overflow:hidden; line-height:9999px; text-indent:-9999px; cursor:pointer;}
 .a_more{ background:url(i03.gif) no-repeat left top; width:10px; height:10px;}
 /*头部*/
-.header{ background:url(../img/navbg.png) repeat-x left -13px; position:absolute; z-index:999; left:0; top:0; width:100%; height:100px;}
-.header_group{ background:url(../img/navbg.png) repeat-x left bottom; position:absolute; z-index:999; left:0; bottom:0; width:100%; height:75px;}
+.header{ background:url(../../img/navbg.png) repeat-x left -13px; position:absolute; z-index:999; left:0; top:0; width:100%; height:100px;}
+.header_group{ background:url(../../img/navbg.png) repeat-x left bottom; position:absolute; z-index:999; left:0; bottom:0; width:100%; height:75px;}
 .header_top{ position:relative; z-index:10; width:1000px; margin:0 auto; text-align:left; height:30px;}
 .logo{ float:left; padding-top:10px;}
 .h-right{ float:right; padding-top:10px;}
@@ -45,7 +45,7 @@ p{   font:14px/1.8em "微软雅黑"; }
 .h-right a{color:#5e5756; font-size:12px; }
 .h-right a:hover{ color:#f98b0c;}
 .h-right .li_a .on{ background:url(i02.gif) no-repeat 43px 5px; position:relative; z-index:1; display:block;}
-.h-right .li_a{ background:url(../img/i01.gif) no-repeat left 11px; padding-left:10px; margin-left:15px;}
+.h-right .li_a{ background:url(static/img/i01.gif) no-repeat left 11px; padding-left:10px; margin-left:15px;}
 .h-r-search{ background-color:#fff; width:140px; height:22px; padding:0 3px; overflow:hidden; border:1px solid #d0d6e2; line-height:22px; margin-left:8px;}
 .h-r-search .text{ float:left;width:110px; height:22px; border:0; line-height:22px; }
 .h-r-search .btn-search-t{ background:url(i_search.gif) no-repeat left top; float:right; width:22px; height:22px;border:0; cursor:pointer; }
@@ -66,9 +66,9 @@ p{   font:14px/1.8em "微软雅黑"; }
 .nav_li{ position:relative; z-index:2;}
 .nav_li_hover{ z-index:1;}
 .nav_li .on{ display:block; float:left; height:39px; position:relative; z-index:2; cursor: pointer; color:#000; font-size:15px;}
-.subnav{ background:url(../img/subbg.gif) no-repeat left top; position:absolute; top: 0px; overflow:hidden; height:29px; width:780px; padding-top:45px; z-index:1; display:none;}
+.subnav{ background:url(../../img/subbg.gif) no-repeat left top; position:absolute; top: 0px; overflow:hidden; height:29px; width:780px; padding-top:45px; z-index:1; display:none;}
 .nav_li_hover .subnav{ display:block;}
-.nav_li_hover .on{ background:url(../img/i07.png) no-repeat center bottom; _background-image:url(i07.gif); /*for IE6*/color:#666}
+.nav_li_hover .on{ background:url(../../img/i07.png) no-repeat center bottom; _background-image:url(../../img/i07.gif); /*for IE6*/color:#666}
 .subnav li{  font-size:12px; color:#fff; font-weight:normal; padding:0 20px 0 0}
 .subnav li a{color:#fff; font-size:12px;}
 .subnav li a:hover{color:#f98b0c;}
@@ -133,8 +133,8 @@ p{   font:14px/1.8em "微软雅黑"; }
 .menu{ padding-top:20px; font-size:14px; color:#000;}
 .menu li{border-bottom:1px solid #dbd4cd; line-height:35px;}
 .menu a{  display:block;color:#000;}
-.menu .tit{ background:url(../img/i12.gif) no-repeat 15px 16px;padding-left:28px;font-size:14px;  cursor:pointer;}
-.menu .tit:hover,.menu .tit_on,.menu .on .tit{background-color:#ed1b2f; background-image:url(../img/i12_h.gif);color:#fff;}
+.menu .tit{ background:url(../../img/i12.gif) no-repeat 15px 16px;padding-left:28px;font-size:14px;  cursor:pointer;}
+.menu .tit:hover,.menu .tit_on,.menu .on .tit{background-color:#ed1b2f; background-image:url(../../img/i12_h.gif);color:#fff;}
 .submenu{ display:none; width:100%; overflow:hidden;font-size:12px;}
 .menu  .block{ display:block;}
 .submenu li{ float:left;border-bottom:0 none; border-top:1px solid #dbd4cd; width:100%;  padding:0;}

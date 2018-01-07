@@ -98,7 +98,7 @@ public class CourseCategoryController {
 	@ResponseBody
 	public String add_category(Zqmeta zqmeta, MultipartFile image){
 		try {
-			if (image != null) {
+			if (image.getOriginalFilename().contains("\\.")) {
 				String suffix = image.getOriginalFilename().split("\\.")[1];
 				String imgurl = mydfsTrackerServer.upload(image.getInputStream(), suffix);
 				zqmeta.setImageUrl(imgurl);

@@ -32,7 +32,7 @@
 							<c:forEach items="${zqmetas}" var="meta">
 
 							<li id="OWNER_8385" class="<c:if test="${zqmeta.id == meta.id}">on</c:if>">
-								<a href="javascript:void(0)" class="tit">${meta.name}</a>
+								<a href="javascript:void(0)" class="tit" onclick="openUrl(this,'${meta.id}')">${meta.name}</a>
 
 								<ul class="submenu" id="bro_8385">
 
@@ -50,7 +50,7 @@
 						<div class="fr location"><a href="/index.jhtml" target="_blank" class="CurrChnlCls">首页</a>-<a href="article/${parent.id}.jhtml" target="_blank" class="CurrChnlCls">${parent.name}</a>-<a href="article/{zqmeta.id}.jhtml" target="_blank" class="CurrChnlCls">${zqmeta.name}</a></div>
 					</div>
 
-					<iframe width="756" height="1350" scrolling="no" frameborder="0" name="aa" src="article_list/${zqmeta.id}.jhtml"></iframe>
+					<iframe width="756" height="1350" scrolling="no" frameborder="0" name="aa" id="aa" src="article_list/${zqmeta.id}.jhtml"></iframe>
 
 				</div>
 				<!--end othersmain-->
@@ -63,6 +63,11 @@
 	<!-- 页面底部引用 begin -->
 	<jsp:include page="footer.jsp" />
 	<!-- 页面底部引用 end -->
-
+<script type="text/javascript">
+	function openUrl(element,id){
+	    $(element).parent().addClass("on").siblings().removeClass("on");
+	    document.aa.document.location="article_list/"+id+".jhtml";
+	}
+</script>
 </body>
 </html>

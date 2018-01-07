@@ -6,7 +6,13 @@
 			+ path + "/";
 %>
 <head>
-	<jsp:include page="meta.jsp" />
+	<base href="<%=basePath%>">
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="http://xingyun.oss-cn-hangzhou.aliyuncs.com/b/crv/images/favicon.ico">
+	<title>中桥能源欢迎您</title>
+	<link rel="stylesheet" href="static/public/css/base_1.css">
+	<link rel="stylesheet" href="static/public/css/images-css.css">
+	<script src="static/public/js/jquery-1.8.0.min.js"></script>
 </head>
 <%@ taglib prefix="date" uri="/tag/datetag.tld"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>

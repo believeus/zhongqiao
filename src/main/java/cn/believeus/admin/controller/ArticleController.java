@@ -8,12 +8,14 @@ import cn.believeus.service.MySQLService;
 import cn.believeus.util.TreeModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -64,7 +66,12 @@ public class ArticleController {
         List<Zqmeta> objectList = (List<Zqmeta>) service.findObjectList(Zqmeta.class,"parentId",1);
         for (Zqmeta zqmeta : objectList) {
             List<Zqmeta> children = (List<Zqmeta>) service.findObjectList(Zqmeta.class,"parentId",zqmeta.getId());
-            zqmeta.setChildren(children);
+            if(CollectionUtils.isEmpty(children)){
+                zqmeta.setChildren(null);
+            }else {
+                zqmeta.setChildren(children);
+            }
+
         }
         return objectList;
     }
@@ -74,6 +81,7 @@ public class ArticleController {
         String hql = "from Zqdata where zqmeta = " + type;
         Page<Zqdata> zqdatas = (Page<Zqdata>) service.findObjectList(hql,pageable);
         model.addAttribute("zqdatas",zqdatas);
+        model.addAttribute("type",type);
         return "/WEB-INF/front/article_list.jsp";
     }
 

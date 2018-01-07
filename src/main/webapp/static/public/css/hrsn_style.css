@@ -7,7 +7,7 @@
 .focus_tab{position:absolute;bottom:0;left:50%;margin-left:-680px;height:76px;z-index:14;background:#a5cc2d repeat;opacity:0.8;filter:Alpha(Opacity=80);width:1360px;}
 .head .focus_right{position:absolute;right:50%;margin-right:-680px;top:235px;z-index:12;cursor:pointer;}
 .focus_btn{padding-top:24px;}
-.focus_btn a{background:url(../img/hrsn_tabbg.png) no-repeat;_background:url(tab.jpg) no-repeat;text-indent:-999px;display:block;float:left;margin-left:15px;width:20px;height:25px;cursor:pointer;}
+.focus_btn a{background:url(../../img/hrsn_tabbg.png) no-repeat;_background:url(tab.jpg) no-repeat;text-indent:-999px;display:block;float:left;margin-left:15px;width:20px;height:25px;cursor:pointer;}
 .focus_btn a.active{background-position:-36px 0;}
 .focus_txt p{font:16px/32px "微软雅黑";color:#fff;display:none;}
 .focus_txt p em{font:40px/76px "微软雅黑";color:#fff;padding-right:25px;}

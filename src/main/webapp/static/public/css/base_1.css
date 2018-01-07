@@ -66,7 +66,7 @@ p{   font:14px/1.8em "微软雅黑"; }
 .nav_li{ position:relative; z-index:2;}
 .nav_li_hover{ z-index:1;}
 .nav_li .on{ display:block; float:left; height:39px; position:relative; z-index:2; cursor: pointer; color:#000; font-size:15px;}
-.subnav{ background:url(subbg.gif) no-repeat left top; position:absolute; top: 0px; overflow:hidden; height:29px; width:780px; padding-top:45px; z-index:1; display:none;}
+.subnav{ background:url(../img/subbg.gif) no-repeat left top; position:absolute; top: 0px; overflow:hidden; height:29px; width:780px; padding-top:45px; z-index:1; display:none;}
 .nav_li_hover .subnav{ display:block;}
 .nav_li_hover .on{ background:url(i07.png) no-repeat center bottom; _background-image:url(i07.gif); /*for IE6*/color:#666}
 .subnav li{  font-size:12px; color:#fff; font-weight:normal; padding:0 20px 0 0}
