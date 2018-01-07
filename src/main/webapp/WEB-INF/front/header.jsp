@@ -3,8 +3,8 @@
 <div class="header" id="head" style="margin-top: 0px;">
 	<div class="header_top">
 		<div class="logo">
-			<a href="http://www.crv.com.cn/"><img
-					src="static/img/P020160406609603319079.png" width="162" height="64"></a>
+			<a href="/"><img
+					src="static/img/zq.png" width="262" style="position: relative;right: 25px"></a>
 		</div>
 		<div style="float:right;width:70px;margin-left:5px;margin-top:10px;"></div>
 	</div>
@@ -47,7 +47,7 @@
 <div class="other-topimg" id="featured">
 	<div id="slider">
 		<ul>
-			<li class="sliderImage"><em class=""></em> <img src="static/img/newsbanner.jpg"> <span></span> </li>
+			<li class="sliderImage"><em class=""></em> <img src="${parent.imageUrl}" onerror="this.src='static/img/newsbanner.jpg'"> <span></span> </li>
 		</ul>
 	</div>
 </div>

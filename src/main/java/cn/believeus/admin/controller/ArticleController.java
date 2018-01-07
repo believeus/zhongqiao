@@ -43,12 +43,15 @@ public class ArticleController {
     @RequestMapping("article/{type}")
     public String article(@PathVariable("type") Integer type, Model model , Pageable pageable){
         Zqmeta zqmeta = (Zqmeta) service.findObject(Zqmeta.class,type);
-        List zqmetas = service.findObjectList(Zqmeta.class,"parentId",type);
+        List zqmetas = null;
         Zqmeta parent = null;
-        if(zqmetas != null && zqmetas.size() > 0){
+        if(zqmeta.getParentId()==1){
             //点的是父类
             parent = zqmeta;
-            zqmeta = (Zqmeta)zqmetas.get(0);
+            zqmetas = service.findObjectList(Zqmeta.class,"parentId",type);
+            if(!CollectionUtils.isEmpty(zqmetas)){
+                zqmeta = (Zqmeta)zqmetas.get(0);
+            }
         }else {
             //点的是子类
             zqmetas = service.findObjectList(Zqmeta.class,"parentId",zqmeta.getParentId());
@@ -71,7 +74,6 @@ public class ArticleController {
             }else {
                 zqmeta.setChildren(children);
             }
-
         }
         return objectList;
     }

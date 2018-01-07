@@ -63,12 +63,12 @@ public class CourseCategoryController {
 	@ResponseBody
 	public String up_category(Zqmeta zqmeta,MultipartFile image){
 		try {
-			if (image.getOriginalFilename().contains("\\.") ){
+			if (image.getOriginalFilename().indexOf(".") != -1 ){
 				String suffix = image.getOriginalFilename().split("\\.")[1];
 				String imgurl = mydfsTrackerServer.upload(image.getInputStream(), suffix);
 				zqmeta.setImageUrl(imgurl);
 			}
-			service.saveOrUpdate(zqmeta);
+				service.saveOrUpdate(zqmeta);
 			return "ok";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -98,7 +98,7 @@ public class CourseCategoryController {
 	@ResponseBody
 	public String add_category(Zqmeta zqmeta, MultipartFile image){
 		try {
-			if (image.getOriginalFilename().contains("\\.")) {
+			if (image.getOriginalFilename().contains(".")) {
 				String suffix = image.getOriginalFilename().split("\\.")[1];
 				String imgurl = mydfsTrackerServer.upload(image.getInputStream(), suffix);
 				zqmeta.setImageUrl(imgurl);
@@ -121,4 +121,5 @@ public class CourseCategoryController {
 	public String get_edit_category(Integer id, Model model){
 		return "/WEB-INF/back/meta/edit.jsp";
 	}
+
 }

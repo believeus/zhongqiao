@@ -824,7 +824,7 @@
 		</plugins>
 
 	</build>
-	<groupId>micro</groupId>
+	<groupId>zq</groupId>
 </project>
 <!--maven 仓库: http://search.maven.org,http://repository.sonatype.org, http://www.mvnrepository.com/, 
 	http://www.sonatype.org/central, -->
